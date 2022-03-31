@@ -1,0 +1,98 @@
+#mainBot {
+    width:320px;
+    height:460px;
+    background-color: var(--bot-bg);
+    position:fixed;
+    right:50px;
+    bottom:50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#botHeader{
+    background-color:dodgerblue;
+    width:100%;
+    height:70px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: grid;
+    grid-template-columns: 270px 40px;
+}
+
+#crossBut{
+    width:40px;
+    height:40px;
+    margin:5px;
+    transition: 0.5s;
+}
+
+#crossBut:hover{
+    transform: scale(1.3)
+}
+
+.botTitle{
+    color:white;
+    padding:10px 10px;
+    margin:0px
+}
+
+#botDisplayFrame{
+    width:100%;
+    height:330px;
+}
+
+#botMessageBar{
+    width:100%;
+    height:100%;
+    padding:5px;
+    box-sizing:border-box;
+    overflow-y: scroll;
+}
+
+ul{
+    list-style-type:none;
+    padding:0px;
+    margin: 0px;
+}
+
+
+.botMessageInput{
+    width:100%;
+    height:50px;
+}
+
+.botMessageInput input{
+    width:94%;
+    padding:10px 5px;
+    margin:5px;
+    border-radius: 10px;
+    border:none;
+}
+
+.anim-top{
+    animation:moveUp 2s;
+}
+
+@keyframes moveUp{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1
+    }
+}
+
+.anim-down{
+    animation:moveDown 2s;
+}
+
+@keyframes moveDown{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity:0;
+    }
+}

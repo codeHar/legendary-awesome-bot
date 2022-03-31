@@ -1,0 +1,34 @@
+.main-manu-container{
+    width:100%;
+    height:100%;
+}
+.manu-container{
+    /* background-color: darkseagreen; */
+    width:100%;
+    height:auto;
+    padding:7px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.manu-button{
+    width:80px;
+    height:80px;
+    margin:5px;
+    transition: 0.4s;
+}
+
+.manu-button:hover{
+    transform: scale(1.1);
+}
+
+.manu-button img{
+    width:100%;
+    height:70%;
+}
+
+.manu-button p{
+    padding:0px;
+    margin:0px;
+    text-align: center;
+}

@@ -1,0 +1,8 @@
+<div class="main-manu-container">
+    <div class="manu-container">
+        <div class="manu-button" *ngFor="let data of datas.buttons" (click)="sendPayload(data.payload)">
+            <img src="assets/images/chatbot.png">
+            <p>{{data.title}}</p>
+        </div>
+    </div> 
+</div>

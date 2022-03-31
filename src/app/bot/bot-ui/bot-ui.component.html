@@ -1,0 +1,29 @@
+<!-- this is the main bot div -->
+    <div id="mainBot" #mainBot *ngIf="showBot">
+
+     <!-- this is the section where we define bot title and headers values -->
+      <div id="botHeader">
+        <h4 class="botTitle">Palm Mind</h4>
+        <img src="assets/images/delete.png" (click)="closeBut(mainBot)" id="crossBut"/>
+      </div>
+
+       <!-- this is the frame section of bot -->
+      <div id="botDisplayFrame" >
+        <!-- this is the section where we show messages -->
+        <app-main-manu (payload)="changeCurrentModule($event)" *ngIf="currentModule==='mainManu'"></app-main-manu>
+        <app-folex *ngIf="currentModule==='folex'"></app-folex>
+        <app-lokeshon *ngIf="currentModule==='lokeshon'"></app-lokeshon>
+        <div id="botMessageBar" *ngIf="currentModule==='normalModule'">
+          <ul id="chat-messages" >
+            <li *ngFor="let msg of messageList">{{msg}}</li>
+          </ul>
+        </div>
+      </div>
+
+       <!-- this is the section where we send messages -->
+      <div id="botMessageInput" class="botMessageInput">
+        <form (ngSubmit)="addMessage(message)">
+        <input type="text" #message>
+        </form>
+      </div>
+    </div>

@@ -1,0 +1,5 @@
+<div id="botIcon" (click)="showBotMan()" *ngIf="showBotIcon">
+    <img src="assets/images/chatbot.png">
+</div>
+
+<app-bot-ui [showBot]="showBot" (hideBot)="hideBotMan($event)"></app-bot-ui>
