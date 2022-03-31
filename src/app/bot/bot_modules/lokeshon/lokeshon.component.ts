@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BotService } from '../../bot.service';
-import * as mapBoxgl from "mapbox-gl"
+import * as mapboxgl from "mapbox-gl"
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -11,13 +11,14 @@ import { environment } from 'src/environments/environment';
 export class LokeshonComponent implements OnInit {
   lokeshon:string
 
-  map:mapBoxgl.Map
-  style="mapbox://styles/mapbox/streets-v11"
-  lat=37.75
-  lng=-122.41
+  map: mapboxgl.Map;
+  style = 'mapbox://styles/mapbox/streets-v11';
+  lng = 85.3240;
+  lat = 27.7172;
+  marker:mapboxgl.Marker
+  
 
   constructor(private botService:BotService) { 
-    mapBoxgl.accessToken=environment.mapBoxKey
   }
 
   ngOnInit(): void {
@@ -42,27 +43,54 @@ export class LokeshonComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position=>{
         this.lat=position.coords.latitude
         this.lng=position.coords.longitude
-        this.map.flyTo({
-          center:[this.lng,this.lat]
-        })
-
         console.log("Position:",position)
         console.log("PositionLatitude:",position.coords.latitude)
       })
     }
-
     this.buildMap()
+    
   }
 
   buildMap(){
-    this.map=new mapBoxgl.Map({
-      container:"map",
-      style:this.style,
-      zoom:13,
+    mapboxgl.accessToken = environment.mapBoxKey;
+      this.map = new mapboxgl.Map({
+        container: 'map',
+        style: this.style,
+        zoom: 13,
+        center: [this.lng, this.lat]
+    });
+    // Add map controls
+    // this.map.addControl(new mapboxgl.NavigationControl());
+
+
+    this.map.flyTo({
       center:[this.lng,this.lat]
     })
 
-    console.log("builded map")
+    this.marker=new mapboxgl.Marker({
+      color:"#21A4BD",
+      draggable:true
+    })
+    .setLngLat([this.lng,this.lat])
+    .addTo(this.map)
+  }
+
+  findLocation(location:HTMLInputElement){
+    console.log("Location: "+location.value)
+    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location.value}.json?proximity=${this.lng},${this.lat}&access_token=${environment.mapBoxKey}`)
+    .then(res=>res.json())
+    .then(data=>{
+      console.log("Data:",data)
+      let loc=data.features[0].center
+      this.lng=loc[0]
+      this.lat=loc[1]
+
+      this.map.flyTo({
+        center:[this.lng,this.lat]
+      })
+
+      this.marker.setLngLat([this.lng,this.lat])
+    })
   }
 
 }

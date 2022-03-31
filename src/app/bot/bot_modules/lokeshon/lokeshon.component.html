@@ -1,3 +1,12 @@
+<div class="location-input-div">
+    <form (ngSubmit)="findLocation(location)">
+        <input type="text" #location>
+        <button class="btn">Find</button>
+    </form>
+</div>
 
-<p>Your location is {{lokeshon}}</p>
-<div class="map" id="map"></div>
+
+<div class="lokeshon-div">
+    <div class="map match-parent" id="map"></div>
+</div>
+
