@@ -1,0 +1,72 @@
+*{
+    color:white;
+}
+
+.folex-container{
+    width:100%;
+    height:100%;
+    padding:5px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.title-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title{
+    margin:0px;
+    font-size:55px;
+}
+
+.folex-container p{
+    margin: 0px;
+}
+
+.input-container{
+    width:80%;
+    margin:auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 20% 30%;
+    color:black;
+    background-color: #85c3b361;
+    border-radius: 5px;
+    gap: 5px;
+    padding:7px;
+}
+
+.grid-input{
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+}
+
+.grid-select{
+    grid-column: 3/4;
+}
+
+.grid-all{
+    grid-column: 1/4;
+    font-size: 20px;
+    margin:0px;
+}
+
+#conversionInput{
+    grid-column:1 / 3;
+    height:40px;
+    margin: auto;
+}
+
+.bideshiCurrency{
+    margin: auto;
+}
+
+::ng-deep .mat-select-min-line{
+    color: white;
+}

@@ -1,0 +1,14 @@
+<div class="main-manu-container">
+    <div class="datetime-div time-div">
+        <h1 class="time">{{time}}</h1>
+    </div>
+    <div class="date-div datetime-div">
+        <p class="date">{{date}}</p>
+    </div>
+    
+        <div class="manu-button" *ngFor="let data of datas.buttons,let i=index" (click)="sendPayload(data.payload)">          
+                <img src={{data.img}}>
+                <p>{{data.title}}</p>
+        </div>
+    
+</div>

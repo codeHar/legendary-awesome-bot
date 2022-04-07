@@ -10,7 +10,8 @@ export class BotUiComponent implements OnInit {
   messageList=[]
   @Input()
   showBot=false
-  currentModule="normalModule"
+  // currentModule="normalModule"
+  currentModule="mainManu"
 
   @Output() hideBot=new EventEmitter()
 

@@ -1,1 +1,30 @@
-<p>folex works!</p>
+<div class="folex-container">
+    <div class="title-bar">
+        <h1 id="title">Forex</h1>
+    </div>
+    <div class="input-container">
+        <div class="grid-input">
+            <mat-form-field style="width:100%">
+                <mat-label>Amout</mat-label>
+                <input matInput placeholder="Amount" type="number" [(ngModel)]="userGivenAmt" (ngModelChange)="convertCurrency()" >
+            </mat-form-field>
+        <!-- <input type="text" id="conversionInput" [(ngModel)]="userGivenAmt" (ngModelChange)="convertCurrency()" > -->
+        </div>
+        <div class="grid-select">
+            <mat-form-field style="width:100%;color:white" appearance="fill">
+                <mat-label>currency</mat-label>
+                <mat-select (valueChange)="changeCurrency($event)" [value]="currentCur">
+                    <mat-option *ngFor="let country of countries" value={{country}} style="color:black">{{country}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <p class="grid-all">=</p>
+        <div class="grid-all">
+            <p>{{rupees | number}}</p><h3>Rupees</h3>
+        </div>
+    </div>
+  
+
+</div>
+

@@ -1,0 +1,4 @@
+<app-mobile-menu (payload)="sendPayload($event)" *ngIf="currentModule==='mainManu'"></app-mobile-menu>
+<app-folex *ngIf="currentModule==='folex'"></app-folex>
+<app-lokeshon *ngIf="currentModule==='lokeshon'"></app-lokeshon>
+<app-feedback *ngIf="currentModule==='feedbake'"></app-feedback>

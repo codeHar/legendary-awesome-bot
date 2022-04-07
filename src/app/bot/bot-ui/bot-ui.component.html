@@ -10,9 +10,7 @@
        <!-- this is the frame section of bot -->
       <div id="botDisplayFrame" >
         <!-- this is the section where we show messages -->
-        <app-main-manu (payload)="changeCurrentModule($event)" *ngIf="currentModule==='mainManu'"></app-main-manu>
-        <app-folex *ngIf="currentModule==='folex'"></app-folex>
-        <app-lokeshon *ngIf="currentModule==='lokeshon'"></app-lokeshon>
+        <app-content-render (payload)="changeCurrentModule($event)" [currentModule]="currentModule"></app-content-render>
         <div id="botMessageBar" *ngIf="currentModule==='normalModule'">
           <ul id="chat-messages" >
             <li *ngFor="let msg of messageList">{{msg}}</li>
@@ -21,7 +19,8 @@
       </div>
 
        <!-- this is the section where we send messages -->
-      <div id="botMessageInput" class="botMessageInput">
+      <div id="botMessageInput" >
+        <img src="assets/images/hamburger.png"  (click)="changeCurrentModule('mainManu')">
         <form (ngSubmit)="addMessage(message)">
         <input type="text" #message autofocus>
         </form>

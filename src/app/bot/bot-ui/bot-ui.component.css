@@ -1,7 +1,7 @@
 #mainBot {
     width:320px;
-    height:460px;
-    background-color: var(--bot-bg);
+    height:500px;
+    background-color: var(--complementryColor);
     position:fixed;
     right:50px;
     bottom:50px;
@@ -9,12 +9,14 @@
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    background: url("https://images.pexels.com/photos/1723637/pexels-photo-1723637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") ;
+    background-size:cover;
 }
 
 #botHeader{
-    background-color:dodgerblue;
+    background-color:var(--dominantColor);
     width:100%;
-    height:70px;
+    height:15%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display: grid;
@@ -35,12 +37,14 @@
 .botTitle{
     color:white;
     padding:10px 10px;
-    margin:0px
+    margin:0px;
+    font-size: 25px;
+    font-weight: 420;
 }
 
 #botDisplayFrame{
     width:100%;
-    height:330px;
+    height:75%;
 }
 
 #botMessageBar{
@@ -48,7 +52,6 @@
     height:100%;
     padding:5px;
     box-sizing:border-box;
-    overflow-y: scroll;
 }
 
 ul{
@@ -58,15 +61,31 @@ ul{
 }
 
 
-.botMessageInput{
+#botMessageInput{
     width:100%;
-    height:50px;
+    height:10%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.botMessageInput input{
-    width:94%;
+#botMessageInput img{
+    width:12%;
+    height:60%;
+    transition: 0.3s;
+}
+
+#botMessageInput img:hover{
+    transform: scale(1.3)
+}
+
+#botMessageInput form{
+    width:78%;
+}
+
+#botMessageInput input{
+    width:100%;
     padding:10px 5px;
-    margin:5px;
     border-radius: 10px;
     border:none;
 }

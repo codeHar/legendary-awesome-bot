@@ -9,7 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { MainManuComponent } from './bot/bot_modules/main-manu/main-manu.component';
 import { FolexComponent } from './bot/bot_modules/folex/folex.component';
 import {HttpClientModule} from "@angular/common/http";
-import { LokeshonComponent } from './bot/bot_modules/lokeshon/lokeshon.component'
+import { LokeshonComponent } from './bot/bot_modules/lokeshon/lokeshon.component';
+import { MobileMenuComponent } from './bot/bot_modules/mobile-menu/mobile-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { FeedbackComponent } from './bot/bot_modules/feedback/feedback.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ContentRenderComponent } from './bot/bot_modules/content-render/content-render.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +26,20 @@ import { LokeshonComponent } from './bot/bot_modules/lokeshon/lokeshon.component
     BotUiComponent,
     MainManuComponent,
     FolexComponent,
-    LokeshonComponent
+    LokeshonComponent,
+    MobileMenuComponent,
+    FeedbackComponent,
+    ContentRenderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

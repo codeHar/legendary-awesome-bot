@@ -1,6 +1,9 @@
 <div class="location-input-div">
     <form (ngSubmit)="findLocation(location)">
-        <input type="text" #location>
+        <mat-form-field>
+            <mat-label>Location</mat-label>
+            <input matInput type="text" #location>
+        </mat-form-field>      
         <button class="btn">Find</button>
     </form>
 </div>

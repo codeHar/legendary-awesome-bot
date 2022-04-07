@@ -12,4 +12,8 @@ export class BotService {
   getLocation(){
     return this.http.get(`${environment.backendUlr}/location`)
   }
+
+  postFeedback(feedback){
+    return this.http.post(`${environment.backendUlr}/feedback`,{feedback})
+  }
 }

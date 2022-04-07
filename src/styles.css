@@ -2,8 +2,19 @@
 
 :root{
     --bot-bg:#dee2e6;
+    --dominantColor:#1D76BC;
+    --complementryColor:#E0EEEC;
+    --accentColor:#408A84;
+    --textColor:#3E4756;
 }
 
 *{
     box-sizing: border-box;
+    /* color:var(--textColor); */
 }
+
+p{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
