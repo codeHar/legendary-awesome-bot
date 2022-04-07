@@ -18,6 +18,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { FeedbackComponent } from './bot/bot_modules/feedback/feedback.component';
 import {MatSelectModule} from '@angular/material/select';
 import { ContentRenderComponent } from './bot/bot_modules/content-render/content-render.component';
+import { MsgModuleComponent } from './bot/bot_modules/msg-module/msg-module.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ContentRenderComponent } from './bot/bot_modules/content-render/content
     LokeshonComponent,
     MobileMenuComponent,
     FeedbackComponent,
-    ContentRenderComponent
+    ContentRenderComponent,
+    MsgModuleComponent
   ],
   imports: [
     BrowserModule,

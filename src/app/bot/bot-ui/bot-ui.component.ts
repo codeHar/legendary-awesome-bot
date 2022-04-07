@@ -1,12 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-bot-ui',
   templateUrl: './bot-ui.component.html',
   styleUrls: ['./bot-ui.component.css']
 })
-export class BotUiComponent implements OnInit {
+export class BotUiComponent implements OnInit ,AfterViewInit{
 
+  // @ViewChild("botMessageBar") botMessageBar:ElementRef
   messageList=[]
   @Input()
   showBot=false
@@ -18,6 +19,9 @@ export class BotUiComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
   }
 
   addMessage(message:HTMLInputElement){

@@ -10,12 +10,13 @@
        <!-- this is the frame section of bot -->
       <div id="botDisplayFrame" >
         <!-- this is the section where we show messages -->
-        <app-content-render (payload)="changeCurrentModule($event)" [currentModule]="currentModule"></app-content-render>
-        <div id="botMessageBar" *ngIf="currentModule==='normalModule'">
+        
+        <div id="botMessageBar" #botMessageBar>
           <ul id="chat-messages" >
             <li *ngFor="let msg of messageList">{{msg}}</li>
           </ul>
         </div>
+        <app-content-render (payload)="changeCurrentModule($event)" [currentModule]="currentModule" [formData]="botMessageBar"></app-content-render>
       </div>
 
        <!-- this is the section where we send messages -->
